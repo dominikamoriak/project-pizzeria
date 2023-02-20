@@ -60,6 +60,8 @@
 
       thisProduct.renderInMenu();
       console.log('new Product:', thisProduct);
+
+      thisProduct.initAccordion();
     }
   
 
@@ -77,6 +79,10 @@
 
       /* add element DOM to menu */
       menuContainer.appendChild(thisProduct.element);
+    }
+
+    initAccordion(){
+      const thisProduct = this;
     }
   }
 
