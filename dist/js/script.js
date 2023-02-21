@@ -95,10 +95,15 @@
         event.preventDefault();
 
         /* find active product (product that has active class) */
+        const activeProduct = document.querySelector('active');
+        console.log(activeProduct);
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
+        
 
-      /* toggle active class on thisProduct.element */
+        /* toggle active class on thisProduct.element */
+
+
       });
     }
   }
