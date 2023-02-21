@@ -61,6 +61,8 @@
       thisProduct.renderInMenu();
       console.log('new Product:', thisProduct);
 
+      thisProduct.getElements();
+
       thisProduct.initAccordion();
     }
   
