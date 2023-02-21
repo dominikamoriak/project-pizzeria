@@ -92,6 +92,7 @@
       clickableTrigger.addEventListener('click', function(event) {
 
         /* prevent default action for event */
+        event.preventDefault();
 
         /* find active product (product that has active class) */
 
