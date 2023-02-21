@@ -95,15 +95,15 @@
         event.preventDefault();
 
         /* find active product (product that has active class) */
-        const activeProduct = document.querySelector('active');
+        const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
         console.log(activeProduct);
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
-        
-
+        if(activeProduct != clickableTrigger){
+          activeProduct.classList.toggle(classNames.menuProduct.wrapperActive);
+        }
         /* toggle active class on thisProduct.element */
-
-
+        clickableTrigger.classList.toggle(classNames.menuProduct.wrapperActive);
       });
     }
   }
