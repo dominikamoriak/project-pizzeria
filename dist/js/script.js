@@ -87,10 +87,14 @@
       const thisProduct = this;
     
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-      thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
-      thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
-      thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
-      thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.accordionTrigger.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
+        thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
+        thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
+        thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      });
     }
 
     initAccordion(){
@@ -107,7 +111,7 @@
         event.preventDefault();
 
         /* find active product (product that has active class) */
-        const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
+        const activeProduct = thisProduct.element.querySelector(classNames.menuProduct.wrapperActive);
         console.log(activeProduct);
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
