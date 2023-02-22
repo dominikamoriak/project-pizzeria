@@ -87,13 +87,23 @@
       const thisProduct = this;
     
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      console.log(thisProduct.accordionTrigger);
+
       thisProduct.accordionTrigger.addEventListener('click', function(event) {
         event.preventDefault();
         
         thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
+        console.log(thisProduct.form);
+
         thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
+        console.log(thisProduct.formInputs);
+
         thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
+        console.log(thisProduct.cartButton);
+
         thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+        console.log(thisProduct.priceElem);
+
       });
     }
 
