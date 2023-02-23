@@ -140,7 +140,7 @@
 
     initOrderForm(){
       const thisProduct = this;
-      console.log(this.initOrderForm);
+      console.log(thisProduct.initOrderForm);
       
       thisProduct.form.addEventListener('submit', function(event){
         event.preventDefault();
@@ -161,7 +161,7 @@
 
     processOrder(){
       const thisProduct = this;
-      console.log(this.processOrder);
+      console.log(thisProduct.processOrder);
 
     }
   }
