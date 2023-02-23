@@ -62,8 +62,11 @@
       console.log('new Product:', thisProduct);
 
       thisProduct.getElements();
-
       thisProduct.initAccordion();
+      
+      thisProduct.initOrderForm();
+      thisProduct.processOrder();
+    
     }
   
 
