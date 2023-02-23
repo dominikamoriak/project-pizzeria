@@ -134,6 +134,17 @@
         console.log(thisProduct.element);
       });
     }
+
+    initOrderForm(){
+      const thisProduct = this;
+      console.log(this.initOrderForm);
+    }
+
+    processOrder(){
+      const thisProduct = this;
+      console.log(this.processOrder);
+
+    }
   }
 
   const app = {
