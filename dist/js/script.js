@@ -155,6 +155,9 @@
       const thisProduct = this;
       console.log(thisProduct.processOrder);
 
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      console.log('formData', formData);
+
     }
   }
 
