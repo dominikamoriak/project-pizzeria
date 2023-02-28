@@ -120,7 +120,7 @@
         console.log(activeProduct);
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
-        if(activeProduct){
+        if(activeProduct && activeProduct !== thisProduct.element){
           activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
         }
 
@@ -173,6 +173,19 @@
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
           console.log(optionId, option);
+
+           // check if there is param with a name of paramId in formData and if it includes optionId
+          if(formData[paramId] && formData[paramId].includes(optionId)) {
+            // check if the option is not default
+            if(????) {
+            // add option price to price variable
+          }
+          } else {
+            // check if the option is default
+            if(????) {
+              // reduce price variable
+            }
+          }
         }
       }
 
