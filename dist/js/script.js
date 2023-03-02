@@ -178,12 +178,14 @@
           if(formData[paramId] && formData[paramId].includes(optionId)) {
             // check if the option is not default
             if(!optionId.default.hasOwnProperty(false)) {
-            // add option price to price variable
+              console.log('optionId.default:', optionId.default);
+              // add option price to price variable
               price[optionId.price] = 1;
             }
           } else {
             // check if the option is default
             if(optionId.default.hasOwnProperty(true)) {
+              console.log('optionId.default:', optionId.default);
               // reduce price variable
               price[optionId.price]--;
             }
