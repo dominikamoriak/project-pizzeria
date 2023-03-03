@@ -186,7 +186,6 @@
           } else {
             // check if the option is default
             if(option.default == true) {
-
               // reduce price variable
               price -= option.price;
             }
