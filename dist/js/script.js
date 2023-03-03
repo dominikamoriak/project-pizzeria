@@ -169,7 +169,8 @@
       for(let paramId in thisProduct.data.params) {
       // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
         const param = thisProduct.data.params[paramId];
-        console.log(paramId, param);
+        console.log(paramId);
+        console.log(param);
 
         // for every option in this category
         for(let optionId in param.options) {
@@ -181,8 +182,16 @@
           // check if there is param with a name of paramId in formData and if it includes optionId
           if(formData[paramId] && formData[paramId].includes(optionId)) {
 
+            // find image with class .paramId-optionId
+            const optionImage = thisProduct.imageWrapper.querySelector(select.paramId-optionId);
+            console.log(optionImage);
+
+            if(optionImage) {
+              // Yes! We've found it!
+            }
+
             // check if the option is not default
-            if(option.default == false) {
+            if(!option.default == false) {
               // add option price to price variable
               price += option.price;
             }
