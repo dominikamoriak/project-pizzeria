@@ -183,11 +183,12 @@
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           console.log(optionSelected);
 
-          if(optionSelected) {
+          // find image with class .paramId-optionId
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log(optionImage);
+          console.log(paramId, optionId);
 
-            // find image with class .paramId-optionId
-            const optionImage = thisProduct.imageWrapper.querySelector('.paramId-optionId');
-            console.log(optionImage);
+          if(optionSelected) {
             
             // check if you can find it
             if(optionImage) {
@@ -202,13 +203,13 @@
             }
 
             // check if the option is not default
-            if(!option.default == false) {
+            if(!option.default) {
               // add option price to price variable
               price += option.price;
             }
           } else {
             // check if the option is default
-            if(option.default == true) {
+            if(option.default) {
               // reduce price variable
               price -= option.price;
             }
