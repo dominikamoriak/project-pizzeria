@@ -188,30 +188,30 @@
           console.log(optionImage);
           console.log(paramId, optionId);
 
+          // check if the option is selected
           if(optionSelected) {
-            
-            // check if you can find it
-            if(optionImage) {
-            // check if the option is selected
-              if(optionSelected) {
-              // yes - show image and add class active
-                optionImage.classList.add(classNames.menuProduct.imageVisible);
-              } else {
-              // no - hide image and remove class active
-                optionImage.classList.remove(classNames.menuProduct.imageVisible);
-              }
-            }
 
             // check if the option is not default
             if(!option.default) {
               // add option price to price variable
               price += option.price;
             }
+            // check if you can find image
+            if(optionImage) {
+              // if yes - show image and add class active
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+            
           } else {
             // check if the option is default
             if(option.default) {
               // reduce price variable
               price -= option.price;
+            }
+            // check if you can find image
+            if(optionImage) {
+              // if no - hide image and remove class active
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
         }
