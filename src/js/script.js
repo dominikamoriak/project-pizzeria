@@ -201,7 +201,7 @@
               // if yes - show image and add class active
               optionImage.classList.add(classNames.menuProduct.imageVisible);
             }
-            
+
           } else {
             // check if the option is default
             if(option.default) {
@@ -220,6 +220,15 @@
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
       console.log(price);
+    }
+  }
+
+  class amountWidget {
+    constructor(element){
+      const thisWidget = this;
+
+      console.log('amountWidget:', thisWidget);
+      console.log('constructor arguments:', element);
     }
   }
 
