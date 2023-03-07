@@ -62,6 +62,7 @@
       console.log('new Product:', thisProduct);
 
       thisProduct.getElements();
+      thisProduct.setValue();
       thisProduct.initAccordion();
 
       thisProduct.initOrderForm();
@@ -261,9 +262,9 @@
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
 
-      /* if the specified value(newValue) is different from that in the thisWidget.value */
-      if(newValue !== thisWidget.value){
-        /* yes, it's different, so make this */
+      /* check if the specified value(newValue) is different from that in the thisWidget.value and if is a number (NOT NULL) */
+      if(thisWidget.value !== newValue && !isNaN(newValue)){
+        /* yes, it's different and number (isn't null), so make this */
         thisWidget.value = newValue;
       }
     }
