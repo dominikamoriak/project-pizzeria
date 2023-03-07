@@ -260,6 +260,12 @@
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
+
+      /* if the specified value(newValue) is different from that in the thisWidget.value */
+      if(newValue !== thisWidget.value){
+        /* yes, it's different, so make this */
+        thisWidget.value = newValue;
+      }
     }
   }
 
