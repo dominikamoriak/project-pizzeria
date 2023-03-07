@@ -268,6 +268,10 @@
         thisWidget.value = newValue;
       }
     }
+
+    initActions(){
+      
+    }
   }
 
   const app = {
