@@ -65,6 +65,7 @@
       thisProduct.initAccordion();
 
       thisProduct.initOrderForm();
+      thisProduct.initAmountWidget();
       thisProduct.processOrder();
     
     }
@@ -223,6 +224,12 @@
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
       console.log(price);
+    }
+
+    initAmountWidget(){
+      const thisProduct = this;
+
+      thisProduct.amountWidget = new amountWidget(thisProduct.amountWidgetElem);
     }
   }
 
