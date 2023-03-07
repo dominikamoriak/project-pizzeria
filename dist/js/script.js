@@ -62,7 +62,6 @@
       console.log('new Product:', thisProduct);
 
       thisProduct.getElements();
-      thisProduct.setValue();
       thisProduct.initAccordion();
 
       thisProduct.initOrderForm();
@@ -241,6 +240,7 @@
       console.log('constructor arguments:', element);
 
       thisWidget.getElements(element);
+      thisWidget.setValue;
     }
 
     getElements(element){
