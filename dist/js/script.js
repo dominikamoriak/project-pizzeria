@@ -229,6 +229,8 @@
       const thisProduct = this;
 
       thisProduct.amountWidget = new amountWidget(thisProduct.amountWidgetElem);
+
+      thisProduct.amountWidget.addEventListener('updated', thisProduct.amountWidgetElem);
     }
   }
 
@@ -270,26 +272,26 @@
       }
     }
 
-    initActions(event){
+    initActions(){
       const thisWidget = this;
-      console.log(initActions);
+      console.log(thisWidget.initActions);
 
       /* add 'change' as event listener and use the method setValue for thisWidget.input */
-      thisWidget.input.addEventListener('change', setValue(value)(event)){
-        initActions();
-      };
+      thisWidget.input.addEventListener('change', thisWidget.setValue(thisWidget.value), function(){
+        thisWidget.initActions();
+      });
 
       /* add 'click' as event listener and use the method setValue for thisWidget.linkDecrease */
-      thisWidget.linkDecrease.addEventListener('click', setValue(++thisWidget.value)(event)){
+      thisWidget.linkDecrease.addEventListener('click', thisWidget.setValue(++thisWidget.value), function(event){
         event.preventDefault();
-        initActions();
-      };
+        thisWidget.initActions();
+      });
 
       /* add 'click' as event listener and use the method setValue for thisWidget.linkIncrease */
-      thisWidget.linkIncrease.addEventListener('click', setValue(--thisWidget.value)(event)){
+      thisWidget.linkIncrease.addEventListener('click', thisWidget.setValue(--thisWidget.value), function(event){
         event.preventDefault();
-        initActions();
-      };
+        thisWidget.initActions();
+      });
     }
 
     announce(){
