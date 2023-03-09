@@ -266,6 +266,7 @@
       if(thisWidget.value !== newValue && !isNaN(newValue)){
         /* yes, it's different and number (isn't null), so make this */
         thisWidget.value = newValue;
+        thisWidget.announce();
       }
     }
 
