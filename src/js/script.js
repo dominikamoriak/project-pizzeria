@@ -230,7 +230,9 @@
 
       thisProduct.amountWidget = new amountWidget(thisProduct.amountWidgetElem);
 
-      thisProduct.amountWidget.addEventListener('updated', thisProduct.amountWidgetElem);
+      thisProduct.amountWidget.addEventListener('updated', thisProduct.amountWidgetElem), function(){
+        thisProduct.processOrder();
+      };
     }
   }
 
