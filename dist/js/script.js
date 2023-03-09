@@ -274,7 +274,7 @@
       console.log(initActions);
 
       /* add 'change' as event listener and use the method setValue for thisWidget.input */
-      thisWidget.input.addEventListener('change', setValue(value)){
+      thisWidget.input.addEventListener('change', setValue(value)(event)){
         initActions();
       };
 
@@ -289,6 +289,13 @@
         event.preventDefault();
         initActions();
       };
+    }
+
+    announce(){
+      const thisWidget = this;
+
+      const event = new Event('updated');
+      thisWidget.element.dispatchEvent(event);
     }
   }
   
