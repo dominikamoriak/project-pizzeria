@@ -284,7 +284,7 @@
       console.log('constructor arguments:', element);
 
       thisWidget.getElements(element);
-      thisWidget.setValue;
+      thisWidget.setValue(this.value);
     }
 
     getElements(element){
@@ -357,6 +357,8 @@
       thisCart.products = [];
       thisCart.getElements(element);
       console.log('new Cart', thisCart);
+
+      thisCart.initActions();
     }
 
     getElements(element){
