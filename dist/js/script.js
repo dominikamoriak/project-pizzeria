@@ -282,20 +282,20 @@
       console.log(thisWidget.initActions);
 
       /* add 'change' as event listener and use the method setValue for thisWidget.input */
-      thisWidget.input.addEventListener('change', thisWidget.setValue(thisWidget.value), function(){
-        thisWidget.initActions();
+      thisWidget.input.addEventListener('change', function(){
+        thisWidget.setValue(thisWidget.value);
       });
 
       /* add 'click' as event listener and use the method setValue for thisWidget.linkDecrease */
-      thisWidget.linkDecrease.addEventListener('click', thisWidget.setValue(++thisWidget.value), function(event){
+      thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.initActions();
+        thisWidget.setValue(thisWidget.value + 1);
       });
 
       /* add 'click' as event listener and use the method setValue for thisWidget.linkIncrease */
-      thisWidget.linkIncrease.addEventListener('click', thisWidget.setValue(--thisWidget.value), function(event){
+      thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.initActions();
+        thisWidget.setValue(thisWidget.value - 1);
       });
     }
 
