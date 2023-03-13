@@ -121,7 +121,7 @@
       menuContainer.appendChild(thisProduct.element);
     }
 
-    getElements(){
+    getElements(element){
       const thisProduct = this;
     
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
@@ -145,6 +145,8 @@
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
       console.log(thisProduct.amountWidgetElem);
 
+      thisProduct.dom = {};
+      thisProduct.dom.wrapper = element;
     }
 
     initAccordion(){
