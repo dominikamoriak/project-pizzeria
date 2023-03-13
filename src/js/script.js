@@ -271,10 +271,16 @@
 
       /* check if the specified value(newValue) is different from that in the thisWidget.value and if is a number (NOT NULL) */
       if(thisWidget.value !== newValue && !isNaN(newValue)){
-        /* yes, it's different and number (isn't null), so make this */
+        /* yes, it's different and number (isn't null) */
         thisWidget.value = newValue;
-        thisWidget.announce();
+
+        /* check if the value is between 1-9 */
+        if(thisWidget.value == settings.amountWidget.defaultMin && settings.amountWidget.defaultMax){
+          /* yes, it's between, so make this */
+          thisWidget.value = newValue;
+        }
       }
+      thisWidget.announce();
     }
 
     initActions(){
