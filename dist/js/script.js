@@ -364,6 +364,8 @@
 
       thisCart.dom = {};
       thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
   }
   
