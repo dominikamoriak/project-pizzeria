@@ -284,7 +284,8 @@
       console.log('constructor arguments:', element);
 
       thisWidget.getElements(element);
-      thisWidget.setValue(this.value);
+      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.initActions();
     }
 
     getElements(element){
