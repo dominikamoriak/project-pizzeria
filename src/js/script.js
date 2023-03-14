@@ -305,7 +305,7 @@
       /* TODO: Add validation */
 
       /* check if the specified value(newValue) is different from that in the thisWidget.value and if is a number (NOT NULL) */
-      if(newValue !== newValue && !isNaN(newValue)){
+      if(thisWidget.value !== newValue && !isNaN(newValue)){
    
         /* check if the value is between 1-9 */
         if(newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
