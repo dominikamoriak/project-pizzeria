@@ -365,14 +365,18 @@
       thisCart.dom.wrapper = element;
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
+      console.log(thisCart.dom.toggleTrigger);
     }
 
     initActions(){
       const thisCart = this;
 
       /* START: add event listener to toggle trigger on event click */
-      thisCart.dom.toggleTrigger.addEventListener('click', function(){
+      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
 
+        /* prevent default action for event */
+        event.preventDefault();
+        
         /* toggle class */
         thisCart.dom.wrapper.toggle(classNames.cart.wrapperActive);
         console.log(thisCart.dom.wrapper);
