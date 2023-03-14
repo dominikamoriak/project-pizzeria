@@ -281,6 +281,19 @@
 
       app.cart.add(thisProduct);
     }
+
+    prepareCartProduct(){
+      const thisProduct = this;
+      console.log(thisProduct.prepareCartProduct);
+
+      const productSummary = {
+        id: thisProduct.data.id,
+        name: thisProduct.data.name,
+        amount: thisProduct.data.amountWidget.value,
+      };
+      console.log(productSummary);
+  
+    }
   }
 
   class amountWidget {
@@ -391,7 +404,6 @@
     add(menuProduct){
       // const thisCart = this;
 
-      console.log('adding product', menuProduct);
     }
   }
   
