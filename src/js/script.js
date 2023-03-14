@@ -370,15 +370,13 @@
 
     initActions(){
       const thisCart = this;
+      console.log(thisCart.initActions);
 
       /* START: add event listener to toggle trigger on event click */
-      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
+      thisCart.dom.toggleTrigger.addEventListener('click', function(){
 
-        /* prevent default action for event */
-        event.preventDefault();
-        
         /* toggle class */
-        thisCart.dom.wrapper.toggle(classNames.cart.wrapperActive);
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
         console.log(thisCart.dom.wrapper);
       });
     }
