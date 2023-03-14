@@ -304,14 +304,13 @@
 
     prepareCartProductParams(){
       const thisProduct = this;
-      console.log(thisProduct.processOrder);
+      console.log(thisProduct.prepareCartProductParams);
 
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
       console.log('formData', formData);
 
-      // set price to default price
-      let price = thisProduct.data.price;
+      params= {};
 
       // for every category (param)...
       for(let paramId in thisProduct.data.params) {
@@ -331,50 +330,15 @@
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           console.log(optionSelected);
 
-          // find image with class .paramId-optionId
-          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
-          console.log(optionImage);
-          console.log(paramId, optionId);
-
           // check if the option is selected
           if(optionSelected) {
-
-            // check if the option is not default
-            if(!option.default) {
-              // add option price to price variable
-              price += option.price;
-            }
-            // check if you can find image
-            if(optionImage) {
-              // if yes - show image and add class active
-              optionImage.classList.add(classNames.menuProduct.imageVisible);
-            }
-
-          } else {
-            // check if the option is default
-            if(option.default) {
-              // reduce price variable
-              price -= option.price;
-            }
-            // check if you can find image
-            if(optionImage) {
-              // if no - hide image and remove class active
-              optionImage.classList.remove(classNames.menuProduct.imageVisible);
-            }
+            // yes, so add the optionSelected to the const productSummary
           }
         }
       }
-
-      // multiply price by amount
-      price *= thisProduct.amountWidget.value;
-
-      // add new value: priceSingle to the thisProduct.price
-      thisProduct.price + thisProduct.priceSingle;
-
-      // update calculated price in the HTML
-      thisProduct.priceElem.innerHTML = price;
-      console.log(price);
+      return params;
     }
+
    }
   }
 
