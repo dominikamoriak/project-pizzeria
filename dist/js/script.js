@@ -295,7 +295,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {},
+        params: {prepareCartProductParams},
       };
       console.log(productSummary);  
 
