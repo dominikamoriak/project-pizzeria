@@ -123,6 +123,9 @@
 
     getElements(element){
       const thisProduct = this;
+
+      thisProduct.dom = {};
+      thisProduct.dom.wrapper = element;
     
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       console.log(thisProduct.accordionTrigger);
@@ -144,9 +147,6 @@
 
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
       console.log(thisProduct.amountWidgetElem);
-
-      thisProduct.dom = {};
-      thisProduct.dom.wrapper = element;
     }
 
     initAccordion(){
@@ -295,7 +295,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {prepareCartProductParams},
+        params: {optionSelected, params[paramId].options},
       };
       console.log(productSummary);  
 
@@ -311,6 +311,7 @@
       console.log('formData', formData);
 
       const params = {};
+      console.log(params);
 
       // for every category (param)...
       for(let paramId in thisProduct.data.params) {
@@ -439,6 +440,9 @@
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       console.log(thisCart.dom.toggleTrigger);
+
+      thisCart.dom.productList = thisCart.element.querySelector(select.cart.productList);
+      console.log(thisCart.dom.productList);
     }
 
     initActions(){
@@ -454,12 +458,24 @@
       });
     }
 
-    add(menuProduct){
-      // const thisCart = this;
+    add(cartProduct){
+      const thisCart = this;
 
+      console.log('adding product', cartProduct);
+
+      /* generate HTML based on template */
+      const generatedHTML = templates.cartProduct(thisCart.data);
+
+      /* create element DOM using utils.createElementFromHTML */
+      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+
+      /* find menu container */
+      const generatedDOM = document.querySelector(select.containerOf.cart);
+
+      /* add element DOM to menu */
+      generatedDOM.appendChild(thisCart.dom.productList);
     }
   }
-  
 
   const app = {
     initMenu: function(){
