@@ -295,7 +295,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params = {},
+        params: {},
       };
       console.log(productSummary);  
 
@@ -310,7 +310,7 @@
       const formData = utils.serializeFormToObject(thisProduct.form);
       console.log('formData', formData);
 
-      params= {};
+      params = {};
 
       // for every category (param)...
       for(let paramId in thisProduct.data.params) {
@@ -318,6 +318,12 @@
         const param = thisProduct.data.params[paramId];
         console.log(paramId);
         console.log(param);
+
+         // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
+         params[paramId] = {
+          label: param.label,
+          options: {}
+         }
 
         // for every option in this category
         for(let optionId in param.options) {
