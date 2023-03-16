@@ -338,7 +338,8 @@
 
           // check if the option is selected
           if(optionSelected) {
-            // yes, so add the optionSelected to the const productSummary
+            // yes, so add the optionSelected to the params[paramId].options
+            optionSelected + params[paramId].options;
           }
         }
       }
