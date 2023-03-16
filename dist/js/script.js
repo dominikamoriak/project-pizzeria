@@ -474,6 +474,9 @@
 
       /* add element DOM to menu */
       generatedDOM.appendChild(thisCart.dom.productList);
+
+      thisCart.products.push(menuProduct);
+      console.log('thisCart.products', thisCart.products);
     }
   }
 
