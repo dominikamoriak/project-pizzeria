@@ -310,7 +310,7 @@
       const formData = utils.serializeFormToObject(thisProduct.form);
       console.log('formData', formData);
 
-      params = {};
+      const params = {};
 
       // for every category (param)...
       for(let paramId in thisProduct.data.params) {
@@ -319,11 +319,11 @@
         console.log(paramId);
         console.log(param);
 
-         // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
-         params[paramId] = {
+        // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
+        params[paramId] = {
           label: param.label,
           options: {}
-         }
+        };
 
         // for every option in this category
         for(let optionId in param.options) {
@@ -346,8 +346,8 @@
       return params;
     }
 
-   }
   }
+  
 
   class amountWidget {
     constructor(element){
