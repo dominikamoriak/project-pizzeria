@@ -480,6 +480,22 @@
     }
   }
 
+  class CartProduct{
+    constructor(menuProduct, element){
+      const thisCartProduct = this;
+      console.log(thisCartProduct);
+
+      thisCartProduct.id = menuProduct.id,
+      thisCartProduct.name = menuProduct.name,
+      thisCartProduct.amount = menuProduct.amountWidget.value,
+      thisCartProduct.price = menuProduct.price,
+      thisCartProduct.priceSingle = menuProduct.priceSingle,
+      thisCartProduct.params = {optionSelected, params[paramId].options},
+
+      thisCartProduct.getElements(element);
+    }
+  }
+
   const app = {
     initMenu: function(){
       const thisApp = this;
