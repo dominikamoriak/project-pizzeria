@@ -494,6 +494,15 @@
 
       thisCartProduct.getElements(element);
     }
+
+    getElements(element){
+      const thisCartProduct = this;
+
+      thisCartProduct.dom = {};
+      thisCartProduct.dom.wrapper = element;
+
+      
+    }
   }
 
   const app = {
