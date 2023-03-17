@@ -503,6 +503,7 @@
         },
       },
       thisCartProduct.getElements(element);
+      thisCartProduct.initCartProduct();
     }
 
     getElements(element){
@@ -522,6 +523,15 @@
 
       thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
       console.log(thisCartProduct.dom.remove);
+    }
+
+    initCartProduct(){
+      const thisCartProduct = this;
+
+      thisCartProduct.CartProduct = new CartProduct(thisCartProduct.CartProductElem);
+
+      thisCartProduct.CartProductElem.addEventListener('updated', function(){
+      });
     }
   }
 
