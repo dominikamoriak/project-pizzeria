@@ -531,6 +531,7 @@
       thisCartProduct.CartProduct = new CartProduct(thisCartProduct.CartProductElem);
 
       thisCartProduct.CartProductElem.addEventListener('updated', function(){
+        thisCartProduct.dom.amountWidget;
       });
     }
   }
