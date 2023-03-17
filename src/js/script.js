@@ -102,9 +102,6 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
-      thisProduct.addToCart();
-      thisProduct.prepareCartProduct();
-      thisProduct.prepareCartProductParams();
     }
   
 
@@ -285,7 +282,7 @@
     addToCart(){
       const thisProduct = this;
 
-      app.cart.add(thisProduct.prepareCartProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
     }
 
     prepareCartProduct(){
@@ -298,7 +295,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: thisProduct.prepareCartProductParams
+        params: thisProduct.prepareCartProductParams()
       };
       console.log(productSummary); 
 
@@ -434,7 +431,6 @@
       console.log('new Cart', thisCart);
 
       thisCart.initActions();
-      thisCart.add();
     }
 
     getElements(element){
@@ -463,22 +459,22 @@
       });
     }
 
-    add(menuProduct, cartProduct){
+    add(menuProduct){
       const thisCart = this;
 
-      console.log('adding product', cartProduct);
+      console.log('adding product', menuProduct);
 
       /* generate HTML based on template */
-      const generatedHTML = templates.cartProduct(thisCart.data);
+      const generatedHTML = templates.cartProduct(menuProduct);
 
       /* create element DOM using utils.createElementFromHTML */
-      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
-      /* find menu container */
-      const generatedDOM = document.querySelector(select.containerOf.cart);
+      /* gdzie je dodać? -> find menu container */
+      const menuContainer = document.querySelector(select.cart.productList);
 
       /* add element DOM to menu */
-      generatedDOM.appendChild(thisCart.dom.productList);
+      menuContainer.appendChild(generatedDOM);
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       console.log('thisCart.products', thisCart.products);
@@ -490,12 +486,12 @@
       const thisCartProduct = this;
       console.log('cartProduct:', thisCartProduct);
 
-      thisCartProduct.id = menuProduct.id,
-      thisCartProduct.name = menuProduct.name,
-      thisCartProduct.amount = menuProduct.amountWidget.value,
-      thisCartProduct.price = menuProduct.price,
-      thisCartProduct.priceSingle = menuProduct.priceSingle,
-      thisCartProduct.params = thisCartProduct.prepareCartProductParams,
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.name;
+      thisCartProduct.amount = menuProduct.amount;
+      thisCartProduct.price = menuProduct.price;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
+      thisCartProduct.params = menuProduct.prepareCartProductParams;
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
@@ -524,9 +520,9 @@
     initAmountWidget(){
       const thisCartProduct = this;
 
-      thisCartProduct.amountWidget = new amountWidget(thisCartProduct.amountWidgetElem);
+      thisCartProduct.amountWidget = new amountWidget(thisCartProduct.dom.amountWidgetElem);
 
-      thisCartProduct.amountWidgetElem.addEventListener('updated', function(){
+      thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
         thisCartProduct.dom.amountWidget;
       });
     }
