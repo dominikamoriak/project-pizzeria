@@ -298,7 +298,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {prepareCartProductParams}
+        params: thisProduct.prepareCartProductParams
       };
       console.log(productSummary); 
 
@@ -495,15 +495,11 @@
       thisCartProduct.amount = menuProduct.amountWidget.value,
       thisCartProduct.price = menuProduct.price,
       thisCartProduct.priceSingle = menuProduct.priceSingle,
-      thisCartProduct.params = {
-        label: thisCartProduct.param,
-        options: {
-          key: thisCartProduct.id,
-          value: thisCartProduct.name,
-        },
-      },
+      thisCartProduct.params = thisProduct.prepareCartProductParams
+
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
+      }
     }
 
     getElements(element){
