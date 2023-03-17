@@ -295,7 +295,13 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {optionSelected, params[paramId].options},
+        params: {
+          label: thisProduct.param,
+          options: {
+            key: thisProduct.id,
+            value: thisProduct.name,
+          }
+        },
       };
       console.log(productSummary);  
 
@@ -480,19 +486,25 @@
     }
   }
 
-  class CartProduct{
+  class cartProduct {
     constructor(menuProduct, element){
       const thisCartProduct = this;
-      console.log(thisCartProduct);
+      console.log('cartProduct:', thisCartProduct);
 
       thisCartProduct.id = menuProduct.id,
       thisCartProduct.name = menuProduct.name,
       thisCartProduct.amount = menuProduct.amountWidget.value,
       thisCartProduct.price = menuProduct.price,
       thisCartProduct.priceSingle = menuProduct.priceSingle,
-      thisCartProduct.params = {optionSelected, params[paramId].options},
-
+      thisCartProduct.params = {
+        label: thisCartProduct.param,
+        options: {
+          key: thisCartProduct.id,
+          value: thisCartProduct.name,
+        },
+      },
       thisCartProduct.getElements(element);
+
     }
 
     getElements(element){
@@ -501,7 +513,6 @@
       thisCartProduct.dom = {};
       thisCartProduct.dom.wrapper = element;
 
-      
     }
   }
 
