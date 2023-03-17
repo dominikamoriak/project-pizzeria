@@ -102,6 +102,9 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
+      thisProduct. addToCart();
+      thisProduct.prepareCartProduct();
+      thisProduct.prepareCartProductParams();
     }
   
 
@@ -295,7 +298,7 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {prepareCartProductParams()}
+        params: {prepareCartProductParams}
       };
       console.log(productSummary); 
 
