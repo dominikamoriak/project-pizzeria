@@ -295,15 +295,9 @@
         amount: thisProduct.amountWidget.value,
         price: thisProduct.price,
         priceSingle: thisProduct.priceSingle,
-        params: {
-          label: thisProduct.param,
-          options: {
-            key: thisProduct.id,
-            value: thisProduct.name,
-          }
-        },
+        params: {prepareCartProductParams()}
       };
-      console.log(productSummary);  
+      console.log(productSummary); 
 
       return productSummary;
     }
