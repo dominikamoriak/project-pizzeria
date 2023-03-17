@@ -495,11 +495,11 @@
       thisCartProduct.amount = menuProduct.amountWidget.value,
       thisCartProduct.price = menuProduct.price,
       thisCartProduct.priceSingle = menuProduct.priceSingle,
-      thisCartProduct.params = thisProduct.prepareCartProductParams
+      thisCartProduct.params = thisCartProduct.prepareCartProductParams,
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-      }
+      
     }
 
     getElements(element){
