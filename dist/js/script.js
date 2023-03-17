@@ -102,7 +102,7 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
-      thisProduct. addToCart();
+      thisProduct.addToCart();
       thisProduct.prepareCartProduct();
       thisProduct.prepareCartProductParams();
     }
@@ -363,6 +363,7 @@
       thisWidget.getElements(element);
       thisWidget.setValue(settings.amountWidget.defaultValue);
       thisWidget.initActions();
+      thisWidget.announce();
     }
 
     getElements(element){
@@ -433,6 +434,7 @@
       console.log('new Cart', thisCart);
 
       thisCart.initActions();
+      thisCart.add();
     }
 
     getElements(element){
