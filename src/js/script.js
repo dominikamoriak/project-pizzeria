@@ -291,10 +291,10 @@
 
       const productSummary = {
         id: thisProduct.id,
-        name: thisProduct.name,
+        name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value,
-        price: thisProduct.price,
-        priceSingle: thisProduct.priceSingle,
+        price: thisProduct.data.price,
+        priceSingle: thisProduct.data.priceSingle,
         params: thisProduct.prepareCartProductParams()
       };
       console.log(productSummary); 
@@ -523,7 +523,7 @@
       thisCartProduct.amountWidget = new amountWidget(thisCartProduct.dom.amountWidgetElem);
 
       thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
-        thisCartProduct.dom.amountWidget;
+        thisCartProduct.dom.amountWidgetElem;
       });
     }
   }
