@@ -323,7 +323,7 @@
         // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
         params[paramId] = {
           label: param.label,
-          options: {}
+          options: []
         };
 
         // for every option in this category
@@ -431,6 +431,7 @@
       console.log('new Cart', thisCart);
 
       thisCart.initActions();
+      //params[paramId].options.push(option.label);
     }
 
     getElements(element){
@@ -524,6 +525,7 @@
 
       thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
         thisCartProduct.dom.amountWidgetElem;
+        thisCartProduct.dom.price;
       });
     }
   }
