@@ -294,7 +294,7 @@
         name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value,
         price: thisProduct.data.price,
-        priceSingle: thisProduct.data.priceSingle,
+        priceSingle: thisProduct.data.price,
         params: thisProduct.prepareCartProductParams()
       };
       console.log(productSummary); 
@@ -480,6 +480,29 @@
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       console.log('thisCart.products', thisCart.products);
     }
+
+    update(){
+      const thisCart = this;
+
+      const deliveryFee = thisCart.dom.wrapper.querySelector(settings.cart.defaultDeliveryFee);
+      console.log(deliveryFee);
+
+      const totalNumber = thisCart.document.querySelector(select.cart.totalNumber);
+      console.log(totalNumber);
+
+      const subtotalPrice = thisCart.document.querySelector(select.cart.subtotalPrice);
+      console.log(subtotalPrice);
+
+      for(thisCart.product of thisCart.products){
+        console.log(thisCart.product);
+
+        thisCart.setValue(thisCart.totalNumber += thisCart.dom.amountWidgetElem);
+        thisCart.setValue(thisCart.subtotalPrice += thisCart.dom.price);
+      }
+      
+      thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
+      console.log(thisCart.totalPrice);
+    }
   }
 
   class CartProduct {
@@ -506,7 +529,7 @@
       thisCartProduct.dom.wrapper = element;
 
       thisCartProduct.dom.amountWidgetElem = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
-      console.log(thisCartProduct.dom.amountWidget);
+      console.log(thisCartProduct.dom.amountWidgetElem);
 
       thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
       console.log(thisCartProduct.dom.price);
