@@ -499,9 +499,20 @@
         thisCart.setValue(thisCart.totalNumber += thisCart.dom.amountWidgetElem);
         thisCart.setValue(thisCart.subtotalPrice += thisCart.dom.price);
       }
-      
-      thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
-      console.log(thisCart.totalPrice);
+
+      // check if there are products in the Cart
+      if(totalNumber == 0){
+        // no products so no deliveryfee, thisCart.totalPrice = 0
+        thisCart.totalPrice = 0;
+      } else {
+        if(totalNumber >= 1){
+        // yes, so add deliveryfee
+          thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
+          console.log(thisCart.totalPrice);
+        }
+      }
+
+   
     }
   }
 
