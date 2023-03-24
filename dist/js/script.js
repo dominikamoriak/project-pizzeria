@@ -431,7 +431,7 @@
       console.log('new Cart', thisCart);
 
       thisCart.initActions();
-      //params[paramId].options.push(option.label);
+      //thisCart.params[thisCart.paramId].options.push(thisCart.option.label);
     }
 
     getElements(element){
