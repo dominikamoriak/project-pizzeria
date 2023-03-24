@@ -511,7 +511,7 @@
         console.log(product);
 
         thisCart.totalNumber += product.amountWidget.value;
-        thisCart.subtotalPrice += products.price;
+        thisCart.subtotalPrice += thisCart.products.price;
       }
 
       // check if there are products in the Cart
@@ -525,7 +525,18 @@
           console.log(thisCart.totalPrice);
         }
       }
+      // update calculated deliveryFee, totalNumber, subtotalPrice, totalPrice in the HTML
+      thisCart.dom.deliveryFee.innerHTML = deliveryFee;
+      console.log(deliveryFee);
 
+      thisCart.dom.totalNumber.innerHTML = totalNumber;
+      console.log(totalNumber);
+
+      thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
+      console.log(subtotalPrice);
+
+      thisCart.dom.totalPrice.innerHTML = thisCart.totalPrice;
+      console.log(thisCart.totalPrice);
    
     }
   }
