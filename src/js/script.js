@@ -561,6 +561,7 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
+      thisCartProduct.initActions();
       
     }
 
@@ -596,6 +597,7 @@
 
     remove(){
       const thisCartProduct = this;
+      console.log(thisCartProduct.remove);
 
       const event = new CustomEvent('remove', {
         bubbles: true,
@@ -605,6 +607,19 @@
       });
 
       thisCartProduct.dom.wrapper.dispatchEvent(event);
+    }
+
+    initActions(){
+      const thisCartProduct = this;
+
+      thisCartProduct.dom.edit.addEventListener('click', function(event){
+        event.preventDefault();
+      });
+
+      thisCartProduct.dom.remove.addEventListener('click', function(event){
+        event.preventDefault();
+        thisCartProduct.remove();
+      });
     }
   }
 
