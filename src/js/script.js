@@ -584,6 +584,7 @@
 
       thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
         thisCartProduct.price = thisCartProduct.amountWidget * thisCartProduct.priceSingle;
+        thisCartProduct.dom.price = thisCartProduct.price;
       });
     }
   }
