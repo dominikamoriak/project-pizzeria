@@ -560,7 +560,7 @@
       thisCartProduct.amountWidget = new amountWidget(thisCartProduct.dom.amountWidgetElem);
 
       thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
-        thisCartProduct.dom.price = thisCartProduct.dom.amountWidgetElem * thisCartProduct.priceSingle;
+        thisCartProduct.price = thisCartProduct.amountWidget * thisCartProduct.priceSingle;
       });
     }
   }
