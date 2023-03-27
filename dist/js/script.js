@@ -654,7 +654,7 @@
       console.log('thisApp.data:', thisApp.data);
 
       for(let productData in thisApp.data.products){
-        new Product(productData, thisApp.data.products[productData]);
+        new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
       }
     },
 
@@ -673,9 +673,9 @@
         .then(function(parsedResponse){
           console.log('parsedResponse', parsedResponse);
 
-          // save parsedResponse as tthisApp.data.products //
+          // save parsedResponse as thisApp.data.products //
 
-          // executre initMenu method //
+          // execute initMenu method //
         });
       console.log('thisApp.data', JSON.stringify(thisApp.data));
     },
@@ -696,7 +696,6 @@
       console.log('templates:', templates);
 
       thisApp.initData();
-      thisApp.initMenu();
       thisApp.initCart();
     },
   };
