@@ -547,6 +547,23 @@
       console.log(thisCart.totalPrice);
    
     }
+
+    remove(menuProduct){
+      const thisCart = this;
+
+      console.log('remove product', menuProduct);
+
+      const indexOfProduct = thisCart.products.indexOf(menuProduct);
+
+      const removeProduct = thisCart.products.splice(indexOfProduct, 1);
+      console.log(removeProduct);
+
+      const removeDom = document.querySelector(select.cart.productList);
+      removeDom.remove();
+      console.log('removeDom:', removeDom);
+
+      thisCart.update();
+    }
   }
 
   class CartProduct {
