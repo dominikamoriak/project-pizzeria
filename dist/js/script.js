@@ -467,10 +467,10 @@
       thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
       console.log(thisCart.dom.form);
 
-      thisCart.dom.address = thisCart.input.value.querySelector(select.cart.address);
+      thisCart.dom.address = thisCart.dom.wrapper.querySelector(select.cart.address);
       console.log(thisCart.dom.address);
 
-      thisCart.dom.phone = thisCart.input.value.querySelector(select.cart.phone);
+      thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
       console.log(thisCart.dom.phone);
     }
 
@@ -591,13 +591,13 @@
       console.log(url);
 
       const payload = {
-        address: thisCart.dom.address,
-        phone: thisCart.dom.phone,
+        address: thisCart.dom.address.value,
+        phone: thisCart.dom.phone.value,
         totalPrice: thisCart.totalPrice,
         subtotalPrice: thisCart.subtotalPrice,
         totalNumber: thisCart.totalNumber,
         deliveryFee: thisCart.deliveryFee,
-        products: thisCart.getData()
+        products: []
       };
       console.log(payload);
 
@@ -614,7 +614,7 @@
       };
       
       fetch(url, options)
-      
+
         .then(function(response){
           return response.json();
         }).then(function(parsedResponse){
@@ -704,12 +704,12 @@
       console.log(thisCartProduct.getData);
 
       const productCartSummary = {
-        id: thisCartProduct.id,
-        name: thisCartProduct.data.name,
-        amount: thisCartProduct.amountWidget.value,
-        price: thisCartProduct.data.price,
-        priceSingle: thisCartProduct.data.price,
-        params: thisCartProduct.prepareCartProductParams()
+        id: thisCartProduct.menuProduct.id,
+        name: thisCartProduct.menuProduct.name,
+        amount: thisCartProduct.menuProduct.amount,
+        price: thisCartProduct.menuProduct.price,
+        priceSingle: thisCartProduct.menuProduct.priceSingle,
+        params: thisCartProduct.menuProduct.params,
       };
       console.log(productCartSummary);
 
