@@ -466,6 +466,12 @@
 
       thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
       console.log(thisCart.dom.form);
+
+      thisCart.dom.address = thisCart.input.value.querySelector(select.cart.address);
+      console.log(thisCart.dom.address);
+
+      thisCart.dom.phone = thisCart.input.value.querySelector(select.cart.phone);
+      console.log(thisCart.dom.phone);
     }
 
     initActions(){
@@ -575,6 +581,25 @@
       menuProduct.dom.wrapper.remove();
 
       thisCart.update();
+    }
+
+    sendOrder(){
+      const thisCart = this;
+      console.log(thisCart.sendOrder);
+
+      const url = settings.db.url + '/' + settings.db.orders;
+      console.log(url);
+
+      const payload = {
+        address: thisCart.dom.address,
+        phone: thisCart.dom.phone,
+        totalPrice: thisCart.totalPrice,
+        subtotalPrice: thisCart.subtotalPrice,
+        totalNumber: thisCart.totalNumber,
+        deliveryFee: thisCart.deliveryFee,
+        //products: ,
+      };
+      console.log(payload);
     }
   }
 
