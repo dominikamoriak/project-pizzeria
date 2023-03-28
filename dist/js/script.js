@@ -604,6 +604,16 @@
       for(let product of thisCart.products) {
         payload.products.push(product.getData());
       }
+      
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      };
+      
+      fetch(url, options);
     }
   }
 
@@ -687,7 +697,7 @@
       const thisCartProduct = this;
       console.log(thisCartProduct.getData);
 
-      const productSummary = {
+      const productCartSummary = {
         id: thisCartProduct.id,
         name: thisCartProduct.data.name,
         amount: thisCartProduct.amountWidget.value,
@@ -695,9 +705,9 @@
         priceSingle: thisCartProduct.data.price,
         params: thisCartProduct.prepareCartProductParams()
       };
-      console.log(productSummary);
+      console.log(productCartSummary);
 
-      return productSummary;
+      return productCartSummary;
     }
   }
 
