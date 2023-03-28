@@ -604,7 +604,7 @@
       for(let product of thisCart.products) {
         payload.products.push(product.getData());
       }
-      
+
       const options = {
         method: 'POST',
         headers: {
@@ -613,7 +613,13 @@
         body: JSON.stringify(payload),
       };
       
-      fetch(url, options);
+      fetch(url, options)
+      
+        .then(function(response){
+          return response.json();
+        }).then(function(parsedResponse){
+          console.log('parsedResponse', parsedResponse);
+        });
     }
   }
 
