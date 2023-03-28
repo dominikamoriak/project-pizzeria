@@ -463,6 +463,9 @@
 
       thisCart.dom.totalNumber = thisCart.dom.wrapper.querySelector(select.cart.totalNumber);
       console.log(thisCart.dom.totalNumber);
+
+      thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
+      console.log(thisCart.dom.form);
     }
 
     initActions(){
@@ -483,6 +486,11 @@
 
       thisCart.dom.productList.addEventListener('remove', function(event){
         thisCart.remove(event.detail.cartProduct);
+      });
+
+      thisCart.dom.form.addEventListener('submit', function (event){
+        event.preventDefault();
+        thisCart.sendOrder();
       });
     }
 
