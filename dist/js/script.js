@@ -678,6 +678,23 @@
         thisCartProduct.remove();
       });
     }
+
+    getData(){
+      const thisCartProduct = this;
+      console.log(thisCartProduct.getData);
+
+      const productSummary = {
+        id: thisCartProduct.id,
+        name: thisCartProduct.data.name,
+        amount: thisCartProduct.amountWidget.value,
+        price: thisCartProduct.data.price,
+        priceSingle: thisCartProduct.data.price,
+        params: thisCartProduct.prepareCartProductParams()
+      };
+      console.log(productSummary);
+
+      return productSummary;
+    }
   }
 
   const app = {
