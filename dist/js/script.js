@@ -597,9 +597,13 @@
         subtotalPrice: thisCart.subtotalPrice,
         totalNumber: thisCart.totalNumber,
         deliveryFee: thisCart.deliveryFee,
-        //products: ,
+        products: thisCart.getData()
       };
       console.log(payload);
+
+      for(let prod of thisCart.products) {
+        payload.products.push(prod.getData());
+      }
     }
   }
 
