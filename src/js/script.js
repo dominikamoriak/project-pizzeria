@@ -563,9 +563,8 @@
       const removeProduct = thisCart.products.splice(indexOfProduct, 1);
       console.log(removeProduct);
 
-      const removeDom = document.querySelector(select.cart.productList);
-      removeDom.remove();
-      console.log('removeDom:', removeDom);
+      // delete DOM
+      menuProduct.dom.wrapper.remove();
 
       thisCart.update();
     }
