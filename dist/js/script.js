@@ -704,12 +704,12 @@
       console.log(thisCartProduct.getData);
 
       const productCartSummary = {
-        id: thisCartProduct.menuProduct.id,
-        name: thisCartProduct.menuProduct.name,
-        amount: thisCartProduct.menuProduct.amount,
-        price: thisCartProduct.menuProduct.price,
-        priceSingle: thisCartProduct.menuProduct.priceSingle,
-        params: thisCartProduct.menuProduct.params,
+        id: thisCartProduct.id,
+        name: thisCartProduct.name,
+        amount: thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        params: thisCartProduct.params,
       };
       console.log(productCartSummary);
 
