@@ -59,8 +59,7 @@ class Product{
     thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     console.log(thisProduct.imageWrapper);
 
-    thisProduct.AmountWidgetElem = thisProduct.element.querySelector(select.menuProduct.A
-        mountWidget);
+    thisProduct.AmountWidgetElem = thisProduct.element.querySelector(select.menuProduct.AmountWidget);
     console.log(thisProduct.AmountWidgetElem);
   }
 
