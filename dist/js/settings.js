@@ -119,8 +119,8 @@ export const settings = {
     repeatParam: 'repeat_ne=false',
   },
   hours: {
-  open: 12,
-  close: 24,
+    open: 12,
+    close: 24,
   },
   datePicker: {
     maxDaysInFuture: 14,
