@@ -107,7 +107,7 @@ class Cart{
     for(let product of thisCart.products){
       console.log('product:', product);
 
-      totalNumber += product.amountWidget.value;
+      totalNumber += product.AmountWidget.value;
       console.log('totalNumber', totalNumber);
       subtotalPrice += product.price;
       console.log('subtotalPrie', subtotalPrice);

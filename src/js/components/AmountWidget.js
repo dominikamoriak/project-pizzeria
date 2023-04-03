@@ -1,14 +1,14 @@
 import { select, settings } from './settings.js';
 
-class amountWidget {
+class AmountWidget {
   constructor(element){
     const thisWidget = this;
 
-    console.log('amountWidget:', thisWidget);
+    console.log('AmountWidget:', thisWidget);
     console.log('constructor arguments:', element);
 
     thisWidget.getElements(element);
-    thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
+    thisWidget.setValue(thisWidget.input.value || settings.AmountWidget.defaultValue);
     thisWidget.initActions();
     thisWidget.announce();
   }
@@ -33,7 +33,7 @@ class amountWidget {
     if(thisWidget.value !== newValue && !isNaN(newValue)){
 
       /* check if the value is between 1-9 */
-      if(newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
+      if(newValue >= settings.AmountWidget.defaultMin && newValue <= settings.AmountWidget.defaultMax){
         /* yes, it's between, so make this */
         thisWidget.value = newValue;
       }
@@ -74,4 +74,4 @@ class amountWidget {
   }
 }
 
-export default amountWidget;
+export default AmountWidget;

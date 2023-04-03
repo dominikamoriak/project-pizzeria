@@ -1,6 +1,6 @@
 import { select, classNames, templates } from './settings.js';
 import utils from '.utils.js';
-import amountWidget from './components/AmountWidget.js';
+import AmountWidget from './components/AmountWidget.js';
 
 class Product{
   constructor(id, data){
@@ -59,8 +59,9 @@ class Product{
     thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     console.log(thisProduct.imageWrapper);
 
-    thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
-    console.log(thisProduct.amountWidgetElem);
+    thisProduct.AmountWidgetElem = thisProduct.element.querySelector(select.menuProduct.A
+        mountWidget);
+    console.log(thisProduct.AmountWidgetElem);
   }
 
   initAccordion(){
@@ -174,7 +175,7 @@ class Product{
 
     // multiply price by amount
     thisProduct.priceSingle = price;
-    price *= thisProduct.amountWidget.value;
+    price *= thisProduct.AmountWidget.value;
 
     thisProduct.price = price;
 
@@ -186,9 +187,9 @@ class Product{
   initAmountWidget(){
     const thisProduct = this;
 
-    thisProduct.amountWidget = new amountWidget(thisProduct.amountWidgetElem);
+    thisProduct.AmountWidget = new AmountWidget(thisProduct.AmountWidgetElem);
 
-    thisProduct.amountWidgetElem.addEventListener('updated', function(){
+    thisProduct.AmountWidgetElem.addEventListener('updated', function(){
       thisProduct.processOrder();
     });
   }
@@ -215,7 +216,7 @@ class Product{
     const productSummary = {
       id: thisProduct.id,
       name: thisProduct.data.name,
-      amount: thisProduct.amountWidget.value,
+      amount: thisProduct.AmountWidget.value,
       price: thisProduct.data.price,
       priceSingle: thisProduct.data.price,
       params: thisProduct.prepareCartProductParams()

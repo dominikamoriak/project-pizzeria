@@ -1,5 +1,5 @@
 import { select } from './settings.js';
-import amountWidget from './AmountWidget.js';
+import AmountWidget from './AmountWidget.js';
 
 class CartProduct {
   constructor(menuProduct, element){
@@ -25,8 +25,8 @@ class CartProduct {
     thisCartProduct.dom = {};
     thisCartProduct.dom.wrapper = element;
 
-    thisCartProduct.dom.amountWidgetElem = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
-    console.log(thisCartProduct.dom.amountWidgetElem);
+    thisCartProduct.dom.AmountWidgetElem = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.AmountWidget);
+    console.log(thisCartProduct.dom.AmountWidgetElem);
 
     thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
     console.log(thisCartProduct.dom.price);
@@ -41,11 +41,11 @@ class CartProduct {
   initAmountWidget(){
     const thisCartProduct = this;
 
-    thisCartProduct.amountWidget = new amountWidget(thisCartProduct.dom.amountWidgetElem);
+    thisCartProduct.AmountWidget = new AmountWidget(thisCartProduct.dom.AmountWidgetElem);
 
-    thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
+    thisCartProduct.dom.AmountWidgetElem.addEventListener('updated', function(){
       console.log('price', thisCartProduct.price);
-      thisCartProduct.price = thisCartProduct.amountWidget.value * thisCartProduct.priceSingle;
+      thisCartProduct.price = thisCartProduct.AmountWidget.value * thisCartProduct.priceSingle;
       thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
     });
   }
