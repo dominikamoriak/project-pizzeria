@@ -1,6 +1,7 @@
 import { settings, select, classNames, templates } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
+import Booking from './components/Booking.js';
 
 const app = {
   initPages: function(){
@@ -102,6 +103,18 @@ const app = {
     });
   },
 
+  initBooking: function(){
+    const thisApp = this;
+
+    thisApp.containerOfBooking = document.querySelector(select.containerOf.booking);
+    
+    // if you find thisApp.containerOfBooking
+    if(thisApp.containerOfBooking){
+      // create new instance
+      new Booking(this.containerOfBooking);
+    }
+  },
+
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
@@ -114,6 +127,7 @@ const app = {
 
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initBooking();
   },
 };
 
