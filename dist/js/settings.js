@@ -32,7 +32,7 @@ export const select = {
     },
     datePicker: { // CODE ADDED 2
       wrapper: '.date-picker', // CODE ADDED 2
-      input: `input[name="date"]`, // CODE ADDED 2
+      input: 'input[name="date"]', // CODE ADDED 2
     }, // CODE ADDED 2
     hourPicker: { // CODE ADDED 2
       wrapper: '.hour-picker', // CODE ADDED 2

@@ -1,5 +1,5 @@
 import { select } from '../settings.js';
-import AmountWidget from '../components/AmountWidget.js';
+import amountWidget from '../components/amountWidget.js';
 
 class CartProduct {
   constructor(menuProduct, element){
@@ -14,7 +14,7 @@ class CartProduct {
     thisCartProduct.params = menuProduct.params;
 
     thisCartProduct.getElements(element);
-    thisCartProduct.initAmountWidget();
+    thisCartProduct.initamountWidget();
     thisCartProduct.initActions();
     
   }
@@ -25,8 +25,8 @@ class CartProduct {
     thisCartProduct.dom = {};
     thisCartProduct.dom.wrapper = element;
 
-    thisCartProduct.dom.AmountWidgetElem = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.AmountWidget);
-    console.log(thisCartProduct.dom.AmountWidgetElem);
+    thisCartProduct.dom.amountWidgetElem = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
+    console.log(thisCartProduct.dom.amountWidgetElem);
 
     thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
     console.log(thisCartProduct.dom.price);
@@ -38,14 +38,14 @@ class CartProduct {
     console.log(thisCartProduct.dom.remove);
   }
 
-  initAmountWidget(){
+  initamountWidget(){
     const thisCartProduct = this;
 
-    thisCartProduct.AmountWidget = new AmountWidget(thisCartProduct.dom.AmountWidgetElem);
+    thisCartProduct.amountWidget = new amountWidget(thisCartProduct.dom.amountWidgetElem);
 
-    thisCartProduct.dom.AmountWidgetElem.addEventListener('updated', function(){
+    thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
       console.log('price', thisCartProduct.price);
-      thisCartProduct.price = thisCartProduct.AmountWidget.value * thisCartProduct.priceSingle;
+      thisCartProduct.price = thisCartProduct.amountWidget.value * thisCartProduct.priceSingle;
       thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
     });
   }

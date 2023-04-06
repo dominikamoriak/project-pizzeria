@@ -1,6 +1,6 @@
 import { select, classNames, templates } from '../settings.js';
 import { utils } from '../utils.js';
-import AmountWidget from '../components/AmountWidget.js';
+import amountWidget from '../components/amountWidget.js';
 
 class Product{
   constructor(id, data){
@@ -15,7 +15,7 @@ class Product{
     thisProduct.initAccordion();
 
     thisProduct.initOrderForm();
-    thisProduct.initAmountWidget();
+    thisProduct.initamountWidget();
     thisProduct.processOrder();
   }
 
@@ -59,8 +59,8 @@ class Product{
     thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     console.log(thisProduct.imageWrapper);
 
-    thisProduct.AmountWidgetElem = thisProduct.element.querySelector(select.menuProduct.AmountWidget);
-    console.log(thisProduct.AmountWidgetElem);
+    thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
+    console.log(thisProduct.amountWidgetElem);
   }
 
   initAccordion(){
@@ -174,7 +174,7 @@ class Product{
 
     // multiply price by amount
     thisProduct.priceSingle = price;
-    price *= thisProduct.AmountWidget.value;
+    price *= thisProduct.amountWidget.value;
 
     thisProduct.price = price;
 
@@ -183,12 +183,12 @@ class Product{
     console.log(price);
   }
 
-  initAmountWidget(){
+  initamountWidget(){
     const thisProduct = this;
 
-    thisProduct.AmountWidget = new AmountWidget(thisProduct.AmountWidgetElem);
+    thisProduct.amountWidget = new amountWidget(thisProduct.amountWidgetElem);
 
-    thisProduct.AmountWidgetElem.addEventListener('updated', function(){
+    thisProduct.amountWidgetElem.addEventListener('updated', function(){
       thisProduct.processOrder();
     });
   }
@@ -215,7 +215,7 @@ class Product{
     const productSummary = {
       id: thisProduct.id,
       name: thisProduct.data.name,
-      amount: thisProduct.AmountWidget.value,
+      amount: thisProduct.amountWidget.value,
       price: thisProduct.data.price,
       priceSingle: thisProduct.data.price,
       params: thisProduct.prepareCartProductParams()

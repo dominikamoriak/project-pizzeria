@@ -1,13 +1,13 @@
 import { select, settings } from '../settings.js';
 import BaseWidget from '../components/BaseWidget.js';
 
-class AmountWidget extends BaseWidget{
+class amountWidget extends BaseWidget{
   constructor(element){
-    super(element, settings.AmountWidget.defaultValue);
+    super(element, settings.amountWidget.defaultValue);
 
     const thisWidget = this;
 
-    //console.log('AmountWidget:', thisWidget);
+    //console.log('amountWidget:', thisWidget);
     //console.log('constructor arguments:', element);
 
     thisWidget.getElements(element);
@@ -25,8 +25,8 @@ class AmountWidget extends BaseWidget{
 
   isValid(value){
     return !isNaN(value)
-    && value >= settings.AmountWidget.defaultMin 
-    && value <= settings.AmountWidget.defaultMax;
+    && value >= settings.amountWidget.defaultMin 
+    && value <= settings.amountWidget.defaultMax;
   }
 
   renderValue(){
@@ -58,4 +58,4 @@ class AmountWidget extends BaseWidget{
   }
 }
 
-export default AmountWidget;
+export default amountWidget;
