@@ -73,8 +73,8 @@ class Booking{
     thisBooking.booked = {};
 
     for(let item of bookings){
-        thisBooking.makeBooked(item.date, item.hour, item.duration, item.table);
-      }
+      thisBooking.makeBooked(item.date, item.hour, item.duration, item.table);
+    }
 
     for(let item of eventsCurrent){
       thisBooking.makeBooked(item.date, item.hour, item.duration, item.table);
@@ -84,11 +84,11 @@ class Booking{
     const maxDate = thisBooking.datePicker.maxDate;
 
     for(let item of eventsRepeat){
-       if(item.repeat == 'daily'){
-            for(let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 1)){
-                thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
-            }
+      if(item.repeat == 'daily'){
+        for(let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 1)){
+          thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
         }
+      }
     }
 
     console.log('thisBooking.booked', thisBooking.booked);
@@ -104,20 +104,20 @@ class Booking{
     }
 
     for(let index = 0; index <3; index++){
-        console.log('loop', index);
-      }
+      console.log('loop', index);
+    }
 
     const startHour = utils.hourToNumber(hour);
 
-    for(let hourBlock = startHour; hourBlock < startHour + duration, hourBlock += 0.5){
-        console.log('loop', hourBlock);
+    for(let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5){
+      console.log('loop', hourBlock);
 
-     if(typeof thisBooking.booked[date][hourBlock] == 'undefined'){
-      thisBooking.booked[date][hourBlock] = [];
+      if(typeof thisBooking.booked[date][hourBlock] == 'undefined'){
+        thisBooking.booked[date][hourBlock] = [];
+      }
+
+      thisBooking.booked[date][hourBlock].push(table);
     }
-
-    thisBooking.booked[date][hourBlock].push(table);
-  }
   }
 
   updateDOM(){
@@ -129,28 +129,28 @@ class Booking{
     let allAvailable = false;
 
     if(
-        typeof thisBooking.booked[thisBooking.date] == 'undefined'
+      typeof thisBooking.booked[thisBooking.date] == 'undefined'
         ||
         typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined'    
     ){
-        allAvailable = true;
+      allAvailable = true;
     }
 
     for(let table of thisBooking.dom.tables){
-        let tableId = table.getAttribute(settings.booking.tableIdAttribute);
-        if(!isNaN(tableId)){
-            tableId = parseInt(tableId);
-        }
+      let tableId = table.getAttribute(settings.booking.tableIdAttribute);
+      if(!isNaN(tableId)){
+        tableId = parseInt(tableId);
+      }
 
-        if(
-            !allAvailable
+      if(
+        !allAvailable
             &&
             thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
-        ){
-            table.classList.add(classNames.booking.tableBooked);
-        } else {
-            table.classList.remove(classNames.booking.tableBooked);
-        }
+      ){
+        table.classList.add(classNames.booking.tableBooked);
+      } else {
+        table.classList.remove(classNames.booking.tableBooked);
+      }
     }
   }
 
@@ -188,7 +188,7 @@ class Booking{
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
     thisBooking.dom.wrapper.addEventListener('updated', function(){
-        thisBooking.updateDOM();
+      thisBooking.updateDOM();
     });
   }
 }
