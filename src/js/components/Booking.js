@@ -8,6 +8,8 @@ class booking{
   constructor(element){
     const thisBooking = this;
 
+    thisBooking.selectedTable = {};
+
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
@@ -180,8 +182,10 @@ class booking{
     thisBooking.hoursAmount = new amountWidget(thisBooking.dom.hoursAmount);
 
     thisBooking.dom.peopleAmount.addEventListener('click', function(){
+      console.log('peopleAmount clicked');
     });
     thisBooking.dom.hoursAmount.addEventListener('click', function(){
+      console.log('hourAmount clicked');
     });
 
     thisBooking.datePicker = new datePicker(thisBooking.dom.datePicker);
@@ -190,6 +194,22 @@ class booking{
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
+
+    // add EventListener to the div of tables
+    for(let table of thisBooking.dom.tables){
+      table.addEventListener('click', function(){
+        thisBooking.initTables(table);
+      });
+    }
+  }
+
+  initTables(clickedTable){
+    const thisBooking = this;
+
+    // check if table is clicked
+    const isTableClicked = clickedTable.classList.contains('table');
+
+    
   }
 }
 export default booking;
