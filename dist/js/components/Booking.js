@@ -118,9 +118,9 @@ class Booking{
 
     thisBooking.booked[date][hourBlock].push(table);
   }
-}
+  }
 
-updateDOM(){
+  updateDOM(){
     const thisBooking = this;
 
     thisBooking.date = thisBooking.datePicker.value;
@@ -171,7 +171,7 @@ updateDOM(){
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
  
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelector(select.booking.tables);
-}
+  }
 
   initWidgets(){
     const thisBooking = this;
