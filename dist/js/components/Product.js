@@ -2,7 +2,7 @@ import { select, classNames, templates } from '../settings.js';
 import { utils } from '../utils.js';
 import amountWidget from '../components/amountWidget.js';
 
-class Product{
+class product{
   constructor(id, data){
     const thisProduct = this;
     thisProduct.id = id;
@@ -272,4 +272,4 @@ class Product{
 
 }
   
-export default Product;
+export default product;

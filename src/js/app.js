@@ -1,7 +1,7 @@
 import { settings, select, classNames, templates } from './settings.js';
-import Product from './components/Product.js';
-import Cart from './components/Cart.js';
-import Booking from './components/Booking.js';
+import product from './components/product.js';
+import cart from './components/cart.js';
+import booking from './components/booking.js';
 
 const app = {
   initPages: function(){
@@ -62,7 +62,7 @@ const app = {
     console.log('thisApp.data:', thisApp.data);
 
     for(let productData in thisApp.data.products){
-      new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
+      new product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
     }
   },
 
@@ -94,24 +94,24 @@ const app = {
     const thisApp = this;
 
     const cartElem = document.querySelector(select.containerOf.cart);
-    thisApp.cart = new Cart(cartElem);
+    thisApp.cart = new cart(cartElem);
 
     thisApp.productList = document.querySelector(select.containerOf.menu);
 
     thisApp.productList.addEventListener('add-to-cart', function(event){
-      app.cart.add(event.detail.product.prepareCartProduct());
+      app.cart.add(event.detail.product.preparecartproduct());
     });
   },
 
   initBooking: function(){
     const thisApp = this;
 
-    thisApp.containerOfBooking = document.querySelector(select.containerOf.booking);
+    thisApp.containerOfbooking = document.querySelector(select.containerOf.booking);
     
-    // if you find thisApp.containerOfBooking
-    if(thisApp.containerOfBooking){
+    // if you find thisApp.containerOfbooking
+    if(thisApp.containerOfbooking){
       // create new instance
-      new Booking(this.containerOfBooking);
+      new booking(this.containerOfbooking);
     }
   },
 

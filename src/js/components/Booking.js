@@ -2,9 +2,9 @@ import { templates, select, settings, classNames } from '../settings.js';
 import { utils } from '../utils.js';
 import amountWidget from '../components/amountWidget.js';
 import datePicker from '../components/datePicker.js';
-import HourPicker from '../components/HourPicker.js';
+import hourPicker from '../components/hourPicker.js';
 
-class Booking{
+class booking{
   constructor(element){
     const thisBooking = this;
 
@@ -185,11 +185,11 @@ class Booking{
     });
 
     thisBooking.datePicker = new datePicker(thisBooking.dom.datePicker);
-    thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
+    thisBooking.hourPicker = new hourPicker(thisBooking.dom.hourPicker);
 
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
   }
 }
-export default Booking;
+export default booking;

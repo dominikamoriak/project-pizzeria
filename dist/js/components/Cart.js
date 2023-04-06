@@ -1,14 +1,14 @@
 import { select, classNames, templates, settings } from '../settings.js';
 import { utils } from '../utils.js';
-import CartProduct from '../components/CartProduct.js';
+import cartProduct from '../components/cartProduct.js';
 
-class Cart{
+class cart{
   constructor(element){
     const thisCart = this;
 
     thisCart.products = [];
     thisCart.getElements(element);
-    console.log('new Cart', thisCart);
+    console.log('new cart', thisCart);
 
     thisCart.initActions();
   }
@@ -90,7 +90,7 @@ class Cart{
     /* add element DOM to menu */
     menuContainer.appendChild(generatedDOM);
 
-    thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
+    thisCart.products.push(new cartProduct(menuProduct, generatedDOM));
     console.log('thisCart.products', thisCart.products);
 
     thisCart.update();
@@ -196,4 +196,4 @@ class Cart{
   }
 }
 
-export default Cart;
+export default cart;

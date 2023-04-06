@@ -1,4 +1,4 @@
-class BaseWidget{
+class baseWidget{
   constructor(wrapperElement, initialValue){
     const thisWidget = this;
 
@@ -64,4 +64,4 @@ class BaseWidget{
   }
 }
 
-export default BaseWidget;
+export default baseWidget;
