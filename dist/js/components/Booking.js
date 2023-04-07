@@ -275,7 +275,7 @@ class booking{
   sendBooking(){
     const thisBooking = this;
 
-    const url = 'http://localhost:3131/bookings';
+    const url = settings.db.url + '/' + settings.db.booking;
     console.log(url);
 
     const payload = {
@@ -307,8 +307,13 @@ class booking{
     fetch(url, options)
       .then(function(response){
         return response.json();
-      }).then(function(parsedResponse){
+      })
+      .then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
+        thisBooking.makeBooked(parsedResponse.date, parsedResponse.hour, parsedResponse.duration, parsedResponse.table);
+      })
+      .catch(function(error){
+        console.error('Error', error);
       });
   }
 }
