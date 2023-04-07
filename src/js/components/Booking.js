@@ -197,17 +197,20 @@ class booking{
 
     // add EventListener to the div of tables
     thisBooking.dom.tables.addEventListener('click', function(event){
-      const clickedTable = event.target;
+      thisBooking.clickedTable = event.target;
       // check if table is clicked and has class table
-      if(clickedTable.classList.contains('table')){
+      if(thisBooking.clickedTable.classList.contains('table')){
         // yes, so pass it to the method initTables
-        thisBooking.initTables(clickedTable);
+        thisBooking.initTables(thisBooking.clickedTable);
       }
     });
   }
 
   initTables(clickedTable){
     const thisBooking = this;
+
+    // reset selectedTable when date, hour, duration or peopleAmount is changed
+    thisBooking.resetTable();
 
     // get tableNumber from data-table attribute
     thisBooking.tableNumber = clickedTable.getAttribute(settings.booking.tableIdAttribute);
@@ -218,10 +221,10 @@ class booking{
       const selectedTable = thisBooking.dom.wrapper.querySelectorAll('.selected');
       // yes, so remove selected class from another table
       if(selectedTable){
-        selectedTable.classList.remove('.selected');
+        selectedTable.classList.remove('selected');
       }
       // and add selected class to the correct clickedTable
-      clickedTable.classList.add('.selected');
+      clickedTable.classList.add('selected');
       // save selectedTable information to the object: thisBooking.selectedTable
       thisBooking.selectedTable = {
         tableNumber: clickedTable.getAttribute(settings.booking.tableIdAttribute),
@@ -234,6 +237,28 @@ class booking{
     } else {
       alert('This table is already booked. Please choose another one.');
     }
+  }
+
+  resetTable(){
+    const thisBooking = this;
+
+    // check if the date, hour, duration or people amount is change
+    if(thisBooking.selectedTable &&
+        (thisBooking.selectedTable.date !== thisBooking.datePicker.value ||
+        thisBooking.selectedTable.hour !== thisBooking.hourPicker.value ||
+        thisBooking.selectedTable.duration !== thisBooking.hoursAmount.value ||
+        thisBooking.selectedTable.people !== thisBooking.peopleAmount.value)
+    ){
+    // find the clickedTable
+      thisBooking.clickedTable = thisBooking.dom.wrapper.querySelector('.selected');
+      // check if the clickedTable is clicked again
+      if(thisBooking.clickedTable){
+        // yes so, remove selected class from clickedTable
+        thisBooking.clickedTable.classList.remove('selected');
+      }
+    }
+    // reset selectedTable information in the object thisBooking.selectedTable = {}
+    thisBooking.selectedTable = null;
   }
 }
 export default booking;
