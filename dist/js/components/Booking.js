@@ -12,7 +12,9 @@ class booking{
 
     thisBooking.render(element);
     thisBooking.initWidgets();
+    thisBooking.initTables();
     thisBooking.getData();
+    thisBooking.sendBooking();
   }
 
   getData(){
@@ -173,6 +175,10 @@ class booking{
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
  
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelector(select.booking.tables);
+  
+    thisBooking.dom.bookingForm = thisBooking.dom.wrapper.querySelector(select.containerOf.booking);
+    thisBooking.dom.address = thisBooking.dom.wrapper.querySelector(select.booking.address);
+    thisBooking.dom.phone = thisBooking.dom.wrapper.querySelector(select.booking.phone);
   }
 
   initWidgets(){
@@ -203,6 +209,11 @@ class booking{
         // yes, so pass it to the method initTables
         thisBooking.initTables(thisBooking.clickedTable);
       }
+    });
+
+    thisBooking.dom.bookingForm.addEventListener('submit', function (event){
+      event.preventDefault();
+      thisBooking.sendBooking();
     });
   }
 
@@ -260,5 +271,46 @@ class booking{
     // reset selectedTable information in the object thisBooking.selectedTable = {}
     thisBooking.selectedTable = null;
   }
+
+  sendBooking(){
+    const thisBooking = this;
+
+    const url = 'http://localhost:3131/bookings';
+    console.log(url);
+
+    const payload = {
+      date: thisBooking.datePicker.value,
+      hour: thisBooking.hourPicker.value,
+      table: thisBooking.selectedTable,
+      duration: parseInt(thisBooking.hoursAmount.value),
+      ppl: parseInt(thisBooking.peopleAmount.value),
+      starters: [],
+      phone: thisBooking.phone.value,
+      address: thisBooking.address.value,
+    };
+    console.log(payload);
+
+    for(let starter of thisBooking.starters){
+      if(starter.checked){
+        thisBooking.starters.push(starter.value);
+      }
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, options)
+      .then(function(response){
+        return response.json();
+      }).then(function(parsedResponse){
+        console.log('parsedResponse', parsedResponse);
+      });
+  }
 }
+
 export default booking;
