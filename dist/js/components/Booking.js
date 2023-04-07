@@ -196,20 +196,44 @@ class booking{
     });
 
     // add EventListener to the div of tables
-    for(let table of thisBooking.dom.tables){
-      table.addEventListener('click', function(){
-        thisBooking.initTables(table);
-      });
-    }
+    thisBooking.dom.tables.addEventListener('click', function(event){
+      const clickedTable = event.target;
+      // check if table is clicked and has class table
+      if(clickedTable.classList.contains('table')){
+        // yes, so pass it to the method initTables
+        thisBooking.initTables(clickedTable);
+      }
+    });
   }
 
   initTables(clickedTable){
     const thisBooking = this;
 
-    // check if table is clicked
-    const isTableClicked = clickedTable.classList.contains('table');
+    // get tableNumber from data-table attribute
+    thisBooking.tableNumber = clickedTable.getAttribute(settings.booking.tableIdAttribute);
 
-    
+    // check if the clickedTable is free
+    if(!clickedTable.classList.contains(classNames.booking.tableBooked)){
+    // check if another table has .selected class
+      const selectedTable = thisBooking.dom.wrapper.querySelectorAll('.selected');
+      // yes, so remove selected class from another table
+      if(selectedTable){
+        selectedTable.classList.remove('.selected');
+      }
+      // and add selected class to the correct clickedTable
+      clickedTable.classList.add('.selected');
+      // save selectedTable information to the object: thisBooking.selectedTable
+      thisBooking.selectedTable = {
+        tableNumber: clickedTable.getAttribute(settings.booking.tableIdAttribute),
+        date: thisBooking.datePicker.value,
+        hour: thisBooking.hourPicker.value,
+        duration: thisBooking.hoursAmount.value,
+        people: thisBooking.peopleAmount.value,
+        starters: [],
+      };
+    } else {
+      alert('This table is already booked. Please choose another one.');
+    }
   }
 }
 export default booking;
