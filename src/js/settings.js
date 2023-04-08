@@ -3,6 +3,7 @@ export const select = {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product', // CODE ADDED
     bookingWidget: '#template-booking-widget', // CODE ADDED 2
+    homeWidget: '#template-home-widget', // CODE ADDED 3
 
   },
   containerOf: {
@@ -10,6 +11,7 @@ export const select = {
     cart: '#cart',
     pages: '#pages', // CODE ADDED 2
     booking: '.booking-wrapper', // CODE ADDED 2
+    home: '.home-wrapper', // CODE ADDED 3
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -69,6 +71,18 @@ export const select = {
     remove: '[href="#remove"]',
   },
   // CODE ADDED END
+  home: { // CODE ADDED START 3
+    cardsWrapper: '.home-cards-wrapper',
+    cardWrapper: '.home-card-wrapper',
+    cardImage: '.home-card-image',
+    cardImageDescription: '.home-card-image-description',
+    carousel: '.carousel',
+    gallery: '.home-gallery',
+    galleryUp: '.gallery-up',
+    galleryDown: '.gallery-down',
+    galleryImage: '.gallery-image',
+  },
+  // CODE ADDED END 3
 };
 
 export const classNames = {
@@ -139,4 +153,7 @@ export const templates = {
   // CODE ADDED START 2
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
   // CODE ADDED END 2
+  // CODE ADDED START 3
+  homeWidget: Handlebars.compile(document.querySelector(select.templateOf.homeWidget).innerHTML),
+  // CODE ADDED END 3
 };
