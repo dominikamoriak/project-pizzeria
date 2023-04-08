@@ -21,6 +21,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -62,13 +63,18 @@
   </header>
 
   <div id="pages">
+    <section id="home">
+      <div class="home-wrapper container">
+      </div></section>
+
     <section id="order">
     <div id="product-list" class="product-list container">
     </div></section>
 
     <section id="booking">
       <div class="booking-wrapper container">
-      </div></section></div>
+      </div></section>
+    </div>
 
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
@@ -97,6 +103,94 @@
       </ul>
     </li>
   </script>
+
+  <script id="template-home-widget" type="text/x-handlebars-template">
+    <div class="home-widget">
+      
+      <div class="home-cards-wrapper">
+
+                <div class="home-card-wrapper">
+                      <div class="home-card-image">
+                          <img src="https://i.postimg.cc/FRcgVpGG/pizza-1.jpg"
+                          alt="image">
+                             <div class="home-card-image-description">
+                                <h5 class="home-card-title">ORDER ONLINE</h5>
+                                <p>Delicious food delivered to your door</p>
+                              </div>
+                    </div>
+              </div>
+              
+                <div class="home-card-wrapper">
+                      <div class="home-card-image">
+                          <img src="https://i.postimg.cc/520BRbnX/pizza-2.jpg"
+                          alt="image">
+                              <div class="home-card-image-description">
+                                  <h5 class="home-card-title">BOOK A TABLE</h5>
+                              </div>
+                      </div>
+              </div>
+              
+               <div class="home-card-wrapper">
+                    <div class="home-card-image">
+                            <div class="home-card-image-description">
+                                <h5 class="home-card-title">OPENING HOURS:</h5>
+                                <p>TUE-SUN, 12PM - 12AM</p>
+                            </div>
+                    </div>
+              </div>
+
+          <div class="home-gallery">
+                  <ul>
+                    <li class="gallery-up">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/RhL7j0kH/pizza-4.jpg"
+                            alt="image">
+                        </div>
+                    </li>   
+                    
+                    <li class="gallery-up">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/mZYycdPg/pizza-5.jpg"
+                            alt="image">
+                        </div>
+                    </li>
+                            
+                    <li class="gallery-up">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/RVG1dNQr/pizza-6.jpg"
+                            alt="image">
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li class="gallery-down">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/mrKy9J3t/pizza-7.jpg"
+                            alt="image">
+                        </div>
+                    </li>
+                    
+                    <li class="gallery-down">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/PJjb3DRH/pizza-8.jpg"
+                            alt="image">
+                        </div>
+                    </li>
+                    
+                    <li class="gallery-down">
+                        <div class="gallery-image">
+                            <img src="https://i.postimg.cc/9Q8pmrrP/pizza-9.jpg"
+                            alt="image">
+                        </div>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+    </div>
+  </script>
+  
+
 
   <script id="template-menu-product" type="text/x-handlebars-template">
     <article class="product"> <!-- product -->
