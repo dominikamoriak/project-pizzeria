@@ -18,8 +18,8 @@ class booking{
   getData(){
     const thisBooking = this;
 
-    const startDateParam = settings.db.dateStartParamKey + '=' + utils.dateToStr.thisBooking.datePicker.minDate;
-    const endDateParam = settings.db.dateEndParamKey + '=' + utils.dateToStr.thisBooking.datePicker.maxDate;
+    const startDateParam = settings.db.dateStartParamKey + '=' + utils.dateToStr(thisBooking.minDate);
+    const endDateParam = settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.maxDat);
 
     const params = {
       booking: [
