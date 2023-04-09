@@ -12,9 +12,7 @@ class booking{
 
     thisBooking.render(element);
     thisBooking.initWidgets();
-    thisBooking.initTables();
     thisBooking.getData();
-    thisBooking.sendBooking();
   }
 
   getData(){
