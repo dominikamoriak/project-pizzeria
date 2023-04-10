@@ -124,10 +124,10 @@ export const settings = {
     orders: 'orders',
     // CODE ADDED END
     // CODE ADDED START 2
-    product: 'product',
-    order: 'order',
-    booking: 'booking',
-    event: 'event',
+    product: 'products',
+    order: 'orders',
+    booking: 'bookings',
+    event: 'events',
     dateStartParamKey: 'date_gte',
     dateEndParamKey: 'date_lte',
     notRepeatParam: 'repeat=false',
