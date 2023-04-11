@@ -1,5 +1,7 @@
 .home-widget {
     transform: opacity 500ms;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .home-wrapper {
@@ -13,11 +15,6 @@
 
 // Cards
 
-.home-widget {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
 .home-cards-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -26,13 +23,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    padding-bottom: 5%;
 }
 
 .home-card-wrapper {
     width: 50%;
     margin: 0;
-    padding-right: 7px;
-    padding-bottom: 0;
+    padding: 2px;
     display: flex;
     flex-direction: column;
   }
@@ -40,14 +37,14 @@
 .home-card-wrapper-background {
     flex-basis: 100%;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 2px;
   }
 
 .home-card-wrapper img {
     width: 100%;
     height: 100px;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 3;
 }
 
 .home-card-image {
@@ -55,6 +52,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    color: $color-light;
 }
 
 .home-card-image-background {
@@ -63,6 +61,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100px;
+    color: $color-light;
+    padding-bottom: 5px;
 }
 
 .home-card-image-description {
@@ -87,39 +88,73 @@
     transform: translate(-50%, -50%);
 }
 
-.home-card-title {
+.home-card-title-order {
     @extend .h1;
-    margin: 0 0 ($base-size * 4) 0;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.home-card-title p {
-    @extend .h2;
-    display: block;
-    margin: 0 0 ($base-size * 2) 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.home-card-p {
-    @extend .h2;
-    display: block;
-    margin: 0 0 ($base-size * 2) 0;
-    transition: transform 0.3s ease-in-out;
+    margin: 25px 0 0 0;
 
     &:hover {
-        transform: translateY(-50px);
+        transform: translateY(-20px);
+        transition: all 1s;
     }
+}
+
+.p-order {
+    @extend .h2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 1s;
+    text-align: center;
+    margin: 0 0 -30px 0;
+    padding: 30px 0 0 0;
+
+    &:hover {
+        transform: translateY(-30px);
+        transition: all 1s;
+    }
+}
+
+.home-card-title-book {
+    @extend .h1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        transform: translateY(-20px);
+        transition: all 1s;
+    }
+}
+
+.home-card-title-opening {
+    @extend .h1;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    margin: 0;
+}
+
+.p-opening {
+    @extend .h2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    margin: 0;
 }
 
 // Carousel
 
 .carousel {
-    margin-top: 50px;
+    padding-top: 50px;
     margin-bottom: 50px;
+
     overflow: hidden;
 }
 
