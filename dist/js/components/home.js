@@ -27,7 +27,11 @@ class home {
 
     // eslint-disable-next-line no-undef
     flickity(thisHome.dom.carousel, {
-
+      cellAlign: 'left',
+      contain: true,
+      autoPlay: true,
+      prevNextButtons: true,
+      wrapAround: true,
     });
   }
 }

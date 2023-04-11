@@ -38,9 +38,9 @@
   }
 
 .home-card-wrapper-background {
-    background-color: $color-main;
     flex-basis: 100%;
     width: 100%;
+    margin-top: 50px;
   }
 
 .home-card-wrapper img {
@@ -52,6 +52,14 @@
 
 .home-card-image {
     display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-card-image-background {
+    background-color: $color-main;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -70,6 +78,13 @@
     align-items: center;
     text-align: center;
     word-wrap: break-word;
+}
+
+.home-card-image-description-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .home-card-title {
@@ -120,22 +135,22 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .home-gallery ul li {
-    position: relative;
     width: calc(33.33% - 10px);
     height: 200px;
     margin-bottom: 10px;
     margin-right: 10px;
   }
   
-  .gallery {
+  .gallery-image {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   
     &:hover:after {
         content: "";
@@ -152,12 +167,8 @@
       &:hover .icons {
         opacity: 1;
   
-        .fa-heart:hover {
-          color: red;
-        }
-  
-        .fa-share-alt:hover {
-          color: blue;
+        .fa:hover {
+          color: $color-main;
         }
       }
     
@@ -203,6 +214,8 @@
       font-size: 2rem;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
+      z-index: 2;
+      color: white;
   
       i {
         display: inline-block;
