@@ -21,15 +21,12 @@ class baseWidget{
 
     /* TODO: Add validation */
 
-    /* check if the specified value(newValue) is different from that in the thisWidget.correctValue and if is a number (NOT NULL) */
-    if(thisWidget.correctValue !== newValue && !isNaN(newValue)){
-
-      /* check if the value is between 1-9 */
-      if(thisWidget.isValid(newValue)){
-        /* yes, it's between, so make this */
-        thisWidget.correctValue = newValue;
-      }
+    /* check if the value is between 1-9 */
+    if(thisWidget.isValid(newValue)){
+      /* yes, it's between, so make this */
+      thisWidget.correctValue = newValue;
     }
+    
     thisWidget.renderValue();
     thisWidget.announce();
   }

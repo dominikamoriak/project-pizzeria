@@ -172,7 +172,8 @@ class booking{
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
  
-    thisBooking.dom.tables = thisBooking.dom.wrapper.querySelector(select.booking.tables);
+    thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
+    thisBooking.dom.floorPlan = thisBooking.dom.wrapper.querySelector(select.booking.floorPlan);
   
     thisBooking.dom.bookingForm = thisBooking.dom.wrapper.querySelector('.booking-form');
     thisBooking.dom.address = thisBooking.dom.wrapper.querySelector('.booking-address');
@@ -199,8 +200,8 @@ class booking{
       thisBooking.updateDOM();
     });
 
-    // add EventListener to the div of tables
-    thisBooking.dom.tables.addEventListener('click', function(event){
+    // add EventListener to the div of floorPlan
+    thisBooking.dom.floorPlan.addEventListener('click', function(event){
       thisBooking.clickedTable = event.target;
       // check if table is clicked and has class table
       if(thisBooking.clickedTable.classList.contains('table')){

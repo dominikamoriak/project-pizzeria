@@ -42,14 +42,15 @@ export const select = {
       output: '.output', // CODE ADDED 2
     },
   },
-  booking: { // CODE ADDED 2
-    peopleAmount: '.people-amount', // CODE ADDED 2
-    hoursAmount: '.hours-amount', // CODE ADDED 2
-    tables: '.floor-plan .table', // CODE ADDED 2
-  }, // CODE ADDED 2
-  nav: { // CODE ADDED 2
+  booking: { // CODE ADDED START 2
+    peopleAmount: '.people-amount',
+    hoursAmount: '.hours-amount', 
+    floorPlan: '.floor-plan',
+    tables: '.floor-plan .table',
+  },
+  nav: { 
     links: '.main-nav a', // CODE ADDED 2
-  }, // CODE ADDED 2
+  }, // CODE ADDED END 2
 
   // CODE ADDED START
   cart: {
