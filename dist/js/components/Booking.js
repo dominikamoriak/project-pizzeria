@@ -227,10 +227,10 @@ class booking{
 
     // check if the clickedTable is free
     if(!clickedTable.classList.contains(classNames.booking.tableBooked)){
-    // check if another table has .selected class
-      const selectedTable = thisBooking.dom.wrapper.querySelectorAll('.selected');
-      // yes, so remove selected class from another table
-      if(selectedTable){
+    // check if another tables has .selected class
+      const selectedTables = thisBooking.dom.wrapper.querySelectorAll('.selected');
+      // yes, so remove selected class from another tables
+      for(let selectedTable of selectedTables){
         selectedTable.classList.remove('selected');
       }
       // and add selected class to the correct clickedTable
