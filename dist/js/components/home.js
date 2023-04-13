@@ -26,7 +26,7 @@ class home {
     const thisHome = this;
 
     // eslint-disable-next-line no-undef
-    flickity(thisHome.dom.carousel, {
+    Flickity(thisHome.dom.carousel, {
       cellAlign: 'left',
       contain: true,
       autoPlay: true,
