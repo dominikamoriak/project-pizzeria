@@ -78,7 +78,7 @@ export const select = {
     cardImage: '.home-card-image',
     cardBackground: '.home-card-background',
     cardImageDescription: '.home-card-image-description',
-    carousel: '.carousel',
+    carousel: '.carousel-inner',
     gallery: '.home-gallery',
     galleryUp: '.gallery-up',
     galleryDown: '.gallery-down',
