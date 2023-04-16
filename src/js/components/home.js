@@ -7,25 +7,25 @@ const templateData = {
     {
       image: 'https://i.postimg.cc/tRmhs3vv/pizza-3.jpg',
       title: 'AMAZING SERVICE!',
-      description: '<p>Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum dolore eu fugiat nulla pariatur. <br>Excepteur sint occaecat cupidatat non proident.</p>',
+      description: '<p>Duis aute irure dolor in reprehenderit in<br> voluptate velit esse cillum dolore eu fugiat nulla<br> pariatur. Excepteur sint occaecat cupidatat non proident. Excepteur sint occaecat cupidatat!</p>',
       author: ' Margaret Osborne'
     },
     {
       image: 'https://i.postimg.cc/tRmhs3vv/pizza-3.jpg',
       title: 'Great venue',
-      description: '<p>Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum dolore eu fugiat nulla pariatur. <br>Excepteur sint occaecat cupidatat non proident.</p>',
+      description: '<p>Duis aute irure dolor in reprehenderit in<br> voluptate velit esse cillum dolore eu fugiat nulla<br> pariatur. Excepteur sint occaecat cupidatat non proident. Excepteur sint occaecat cupidatat!</p>',
       author: ' Tommy Peron'
     },
     {
       image: 'https://i.postimg.cc/tRmhs3vv/pizza-3.jpg',
       title: 'Best Service',
-      description: '<p>Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum dolore eu fugiat nulla pariatur. <br>Excepteur sint occaecat cupidatat non proident.</p>',
+      description: '<p>Duis aute irure dolor in reprehenderit in<br> voluptate velit esse cillum dolore eu fugiat nulla<br> pariatur. Excepteur sint occaecat cupidatat non proident. Excepteur sint occaecat cupidatat!</p>',
       author: ' Kaslik Amanow'
     },
     {
       image: 'https://i.postimg.cc/tRmhs3vv/pizza-3.jpg',
       title: 'Good snacks',
-      description: '<p>Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum dolore eu fugiat nulla pariatur. <br>Excepteur sint occaecat cupidatat non proident.</p>',
+      description: '<p>Duis aute irure dolor in reprehenderit in<br> voluptate velit esse cillum dolore eu fugiat nulla<br> pariatur. Excepteur sint occaecat cupidatat non proident. Excepteur sint occaecat cupidatat!</p>',
       author: ' Rupert Seamson'
     },
   ]
