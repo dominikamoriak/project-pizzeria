@@ -154,14 +154,42 @@
 .carousel {
     padding-top: 50px;
     margin-bottom: 50px;
-
     overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.carousel-item {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin: 0 50px 0 0;
+   padding-right: 20px;
+}
+
+.carousel-item img {
+      height: 200px;
+      width: 200px;
+      flex-basis: 20%;
+      object-fit: cover;
+}
+
+.carousel-opinion {
+      padding-left: 30px;
+      flex-basis: 70%;
+}
+
+.carousel-title {
+        margin-bottom: 0;
+}
+
+.author {
+  font-style: italic;
 }
 
 // Gallery
 
 .home-gallery {
-    margin-top: 200px;
+    margin-top: 80px;
   }
   
   .home-gallery ul {

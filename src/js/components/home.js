@@ -36,7 +36,7 @@ class home {
     const thisHome = this;
 
     thisHome.render(element);
-    // thisHome.initWidgets();
+    thisHome.initWidgets();
   }
 
   render(element){
@@ -58,11 +58,7 @@ class home {
 
     // eslint-disable-next-line no-undef
     new Flickity(thisHome.dom.carousel, {
-      cellAlign: 'left',
-      contain: true,
-      autoPlay: true,
-      prevNextButtons: true,
-      wrapAround: true,
+      prevNextButtons: false,
     });
   }
 }
